@@ -14,8 +14,8 @@ import java.lang.annotation.Target;
  * <pre>
  * {@literal @}ResourceKeys
  * public enum Foo {
- *   {@literal @}ResourceParameter(name = "foo", type = String.class)
- *   {@literal @}ResourceParameter(name = "bar", type = String.class, description = "A parameter")
+ *   {@literal @}ResourceParameter(name = "foo", type = Integer.class)
+ *   {@literal @}ResourceParameter(name = "bar", description = "A parameter")
  *   FOO
  * }
  * </pre>
@@ -39,7 +39,7 @@ public @interface ResourceParameter {
   /**
    * The type of the parameter
    */
-  Class<?> type();
+  Class<?> type() default String.class;
   
   /**
    * The description of the parameter
